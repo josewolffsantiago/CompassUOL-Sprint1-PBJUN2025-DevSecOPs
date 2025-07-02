@@ -41,7 +41,6 @@ Esses conhecimentos irão formar a base para avançar em virtualização e admin
 
 ## 2. Configurando VPC  
 
-# 1. VPC
 VPC é a sigla para Virtual Private Cloud e ele é um ambiente de rede isolado dentro da nuvem AWS. A criação de um VPC garante que possamos executar nossos proprios recursos de forma segura e controlada.
 
 O intuito aqui é criar uma VPC seguindo os passos do desafio. A VPC necessita:
@@ -51,28 +50,27 @@ O intuito aqui é criar uma VPC seguindo os passos do desafio. A VPC necessita:
 
 Ao acessar pela primeira vez após a criação da conta AWS ou após habilitação do Administrador, siga estes passos:
 
-1. Na aba escrito Search no canto superior esquerto digite "VPC" 
+### 1. Na aba escrito Search no canto superior esquerto digite "VPC" 
 
-![VPC Aba Search](../imgs/AWS-EC2-Aba-search.png)
+![VPC Aba Search](/imgs/AWS-EC2-Aba-search.png)
 
-2. Clica em "Your VPCs"
+### 2. Clica em "Your VPCs"
 
-3. Ao abrir a página, procure por "Criar VPC"
+### 3. Ao abrir a página, procure por "Criar VPC"
 
-4. A AWS dá duas opções de VPC: "Somente VPC" ou "VPC e muito mais". Iremos na segunda opção, como a imagem abaixo.
-
+### 4. A AWS dá duas opções de VPC: "Somente VPC" ou "VPC e muito mais". Iremos na segunda opção, como a imagem abaixo.
+    
 ![VPC Novo VPC](/imgs/AWS-EC2-VPC-CREATE-NEW.png)
-
-   
+    
 4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
-4.1.1 Neste caso, o ip é o 172.32.0.0/16
-
-        4.1.2 ![VPC Novo VPC](../imgs/AWS-EC2-VPC-CREATE-NEW2.png)    
-    4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
-    4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
+        4.1.1 Neste caso, o ip é o 172.32.0.0/16    
+        4.1.2 ![VPC Novo VPC](/imgs/AWS-EC2-VPC-CREATE-NEW2.png)    
+4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
+4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
         4.3.1 Número de sub-redes públicas
         4.3.2 Número de sub-redes Privada
-    4.4 Selecionar o
+4.4 Selecionar o
+
 
 
 ## 5. Referências
