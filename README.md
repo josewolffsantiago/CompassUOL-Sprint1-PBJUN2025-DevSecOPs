@@ -64,9 +64,9 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
     
 4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
 
-![VPC Novo VPC2](/imgs/AWS-EC2-VPC-CREATE-NEW2.png) 
-
 4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
+
+![VPC Novo VPC2](/imgs/AWS-EC2-VPC-CREATE-NEW2.png) 
 
 4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
 
@@ -74,8 +74,98 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
 
 - Número de sub-redes Privadas
 
-4.4 Selecionar o
+4.4 Selecionar a criação do Gateway NAT
 
+- Cuidado para não incindir cobranças na criação desde Gateway.
+
+### 5. Após todos estes passos, a sua pré-visualização deverá ficar próximo a este:
+
+![VPC Pre Visualizacao](/imgs/AWS-EC2-VPC-CREATE-PRE-VISUALIZACAO.png)
+
+### FINAL. Pode clicar em "Criar VPC"
+
+Pronto, a VPC foi criada conforme o desafio.
+
+## 3. Criando Instância EC2 na AWS
+
+Vamos criar uma máquina virtual com o sistema operacional Amazon Linux
+
+### 1. Na aba "Search" coloque EC2 e logo após clique em "Dashboard"
+
+![VPC Shearch EC2 - Dashboard](/imgs/AWS-EC2-Aba-Search-EC2.png)
+
+### 2. Procure por "Executar Instância" e clique
+
+### 3. Na próxima janela que foi carregado, preencha as TAGS
+
+![VPC TAGS](/imgs/AWS-EC2-Instance-TAGS.png)
+
+- As Tags são importantes para a organização das suas instâncias
+- Foram censuradas as Tags do programa por motivos de segurança
+
+### 4. Em "Ínicio rápido", selecione o sistema operacional "Amazon Linux"
+
+### 5. Em "Tipo de instância" deixe o padrão (t2.micro)
+
+### 6. Em par de chaves, clique em "Criar novo par de chaves"
+
+![VPC Par de Chaves](/imgs/AWS-EC2-Criar-chave-ssh2.png)
+
+- Coloque um nome para a sua chave
+
+>**Nota** Ao criar as chaves, vai aparecer um arquivo para ser realizado o Download. Salve em um lugar seguro pois ele será usado mais para frente.
+
+## 7. Configuração de rede: Clique em editar logo a direita para abrir mais opções
+
+![VPC Configuração de Rede](/imgs/AWS-EC2-Configuracao-rede.png)
+
+- Selecione o VPC criado posteriormente
+
+- Selecione a Sub-rede pública criado posteriormente
+
+- Adicione uma regra do grupo de segurança para o HTTP
+
+>**Nota** Importante ter esta regra HTTP ativa e liberada para o NGINX funcionar corretamente.
+
+## FINAL. Clica em executar instância para criar sua máquina virtual
+
+- Espere a instância carregar para fazer o primeiro acesso
+
+## 4. Acesso usando a chave SSH
+
+Aguarde um tempo para que a sua instância possa carregar e logo após inicie os passos a seguir:
+
+### Primeira conexão
+
+- Dentro do site da AWS, colete o IP Público da instância. 
+
+- No terminal do Linux (Em WSL ou no próprio sistema operacional linux) digite conforme abaixo:
+
+            ssh -i /caminho/para/sua/chave.pem ec2-user@ec2-endereco_ip_publico.região.da.instância
+- Exemplo
+            ssh -i /home/USER_LINUX/Downloads/zezinhachave.pem ec2-user@ec2-12-123-321-333.us-east-2.compute.amazonaws.com
+
+- No passo seguinte o terminal irá aparecer a seguinte mensagem:
+
+            Are you sure you want to continue connecting (yes/no/[fingerprint])?
+
+- Coloque "yes" e dê Enter no teclado
+
+### FINAL. Pronto, você está conectado à sua máquina virtual diretamente no terminal LINUX
+
+## 4. NGINX e o código HTML básico
+
+NGINX é um software de servidor web de código aberto conhecido por sua alta performance e baixa utilização de recursos. Iremos utilizar ele na nossa máquina virtual para fazermos os devidos testes proposto no desafio.
+
+### 1. Instalando pacote NGINX
+
+- No terminal iremos colocar os seguintes comandos
+
+            sudo dnf update && dnf install nginx
+
+### 2. 
+
+            
 
 
 ## 5. Referências
