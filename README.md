@@ -70,9 +70,9 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
 
 4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
 
-    - Número de sub-redes públicas
+- Número de sub-redes públicas
 
-    - Número de sub-redes Privadas
+- Número de sub-redes Privadas
 
 4.4 Selecionar o
 
