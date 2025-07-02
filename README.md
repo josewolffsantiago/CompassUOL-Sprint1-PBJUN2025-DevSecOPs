@@ -64,15 +64,15 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
     
 4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
 
-! [VPC Novo VPC2](/imgs/AWS-EC2-VPC-CREATE-NEW2.png) 
+![VPC Novo VPC2](/imgs/AWS-EC2-VPC-CREATE-NEW2.png) 
 
 4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
 
 4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
 
-        4.3.1 Número de sub-redes públicas
+    - Número de sub-redes públicas
 
-        4.3.2 Número de sub-redes Privada
+    - Número de sub-redes Privadas
 
 4.4 Selecionar o
 
