@@ -22,10 +22,14 @@
 - **Conhecimento básico do console AWS**
 - **Vontade de aprender e dedicação**
 
-## 1. Introdução
-    Nesta primeira Sprint fomos introduzidos ao mundo do linux, primordial para o entendimento da virtualização em nuvem. 
+---
 
-## 2. Como configurar VPC na AWS 
+## 1. Introdução
+ Nesta primeira Sprint fomos introduzidos ao mundo do linux, primordial para o entendimento da virtualização em nuvem. Antes de entrarmos na AWS ou na virtualização de fato, procure entender e compreender a interface de linha de comando (CLI) no LINUX. Independente da distribuição que esteja usando, deixe de lado a interface gráfica e estude os comandos do terminal, na qual fará mais sentido no quesito da virtualização não ter espaço sufiente para que a interface gráfica da distribuição linux da instância que está virtualizada
+
+É importante entender que as distribuições LINUX possuem "bases diferentes", na qual 
+
+## 2. Configurando VPC  
 
 
 ## 5. Referências
