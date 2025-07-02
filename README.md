@@ -39,14 +39,16 @@ Esses conhecimentos irão formar a base para avançar em virtualização e admin
 
 >**Nota:** Conforme documentado a frente, o Amazon Linux, distribuição padrão da AWS, possui base Red Hat.
 
+---
+
 ## 2. Configurando VPC  
 
 VPC é a sigla para Virtual Private Cloud e ele é um ambiente de rede isolado dentro da nuvem AWS. A criação de um VPC garante que possamos executar nossos proprios recursos de forma segura e controlada.
 
 O intuito aqui é criar uma VPC seguindo os passos do desafio. A VPC necessita:
-    x. 2 sub-redes pública
-    y. 2 sub-redes privadas
-    z. Uma Internet Gateway conectada às sub-redes públicas.
+   #### x. 2 sub-redes pública
+   #### y. 2 sub-redes privadas
+   #### z. Uma Internet Gateway conectada às sub-redes públicas.
 
 Ao acessar pela primeira vez após a criação da conta AWS ou após habilitação do Administrador, siga estes passos:
 
@@ -62,19 +64,19 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
     
 ![VPC Novo VPC](/imgs/AWS-EC2-VPC-CREATE-NEW.png)
     
-4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
+#### 4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
 
-4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
+#### 4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
 
 ![VPC Novo VPC2](/imgs/AWS-EC2-VPC-CREATE-NEW2.png) 
 
-4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
+#### 4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
 
 - Número de sub-redes públicas
 
 - Número de sub-redes Privadas
 
-4.4 Selecionar a criação do Gateway NAT
+#### 4.4 Selecionar a criação do Gateway NAT
 
 - Cuidado para não incindir cobranças na criação desde Gateway.
 
@@ -85,6 +87,8 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
 ### FINAL. Pode clicar em "Criar VPC"
 
 Pronto, a VPC foi criada conforme o desafio.
+
+---
 
 ## 3. Criando Instância EC2 na AWS
 
@@ -131,6 +135,8 @@ Vamos criar uma máquina virtual com o sistema operacional Amazon Linux
 
 - Espere a instância carregar para fazer o primeiro acesso
 
+---
+
 ## 4. Acesso usando a chave SSH
 
 Aguarde um tempo para que a sua instância possa carregar e logo após inicie os passos a seguir:
@@ -153,7 +159,7 @@ Aguarde um tempo para que a sua instância possa carregar e logo após inicie os
 
 ### FINAL. Pronto, você está conectado à sua máquina virtual diretamente no terminal LINUX
 
-## 4. NGINX e o código HTML básico
+## 5. NGINX e o código HTML básico
 
 NGINX é um software de servidor web de código aberto conhecido por sua alta performance e baixa utilização de recursos. Iremos utilizar ele na nossa máquina virtual para fazermos os devidos testes proposto no desafio.
 
@@ -163,7 +169,9 @@ NGINX é um software de servidor web de código aberto conhecido por sua alta pe
 
             sudo dnf update && dnf install nginx
 
-### 2. 
+### 2. Configuração
+
+- 
 
             
 
