@@ -174,7 +174,9 @@ Aguarde um tempo para que a sua instância possa carregar e logo após inicie os
 - No terminal do Linux (Em WSL ou no próprio sistema operacional linux) digite conforme abaixo:
 
             ssh -i /caminho/para/sua/chave.pem ec2-user@ec2-endereco_ip_publico.região.da.instância
+
 - Exemplo
+
             ssh -i /home/USER_LINUX/Downloads/zezinhachave.pem ec2-user@ec2-12-123-321-333.us-east-2.compute.amazonaws.com
 
 - No passo seguinte o terminal irá aparecer a seguinte mensagem:
@@ -322,7 +324,7 @@ Neste momento nós iremos criar um arquivo com final sh, na qual teremos um cód
 
 ### 6.2. Código para funcionar o WEBHOOK
 
-O arquivo shell está disponibilizado [aqui](/jgustavo_WEBHOOK_Telegram.sh), mas também terá o código aqui na documentação e explicado.
+O arquivo shell está disponibilizado [aqui](/bash/jgustavo_WEBHOOK_Telegram.sh), mas também terá o código aqui na documentação e explicado.
 
 #### 6.2.1. Criação do arquivo
 
