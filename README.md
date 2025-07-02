@@ -4,6 +4,27 @@
 > **Nota:**
 > Esta documentação faz parte do programa da Compass UOL e não é considerada um tutorial. Siga cada etapa cuidadosamente e, em caso de dúvidas, consulte a documentação oficial da AWS. 
 
+
+## Índice
+
+- [Pré-requisitos](#0-pré-requisitos)
+
+- [Introdução](#1-introdução)
+
+- [Configurando VPC](#2-configurando-vpc)
+
+- [Criando Instância EC2 na AWS](#3-criando-instância-ec2-na-aws)
+
+- [Acesso usando a chave SSH](#4-acesso-usando-a-chave-ssh)
+
+- [NGINX e o código HTML básico](#5-nginx-e-o-código-html-básico)
+
+- [Configurar o WEBHOOK do Telegram](#6-configurar-o-webhook-do-telegram-para-receber-alertas-quando-o-site-estiver-fora-do-ar)
+
+- [Saídas dos códigos](#7-se-estiver-tudo-funcionando-estas-serão-as-saídas-dos-códigos)
+
+- [Referências](#8-referências)
+
 ## 0. Pré-requisitos
 
 - **Computador com Linux** (qualquer distribuição)  
@@ -254,85 +275,7 @@ NGINX é um software de servidor web de código aberto conhecido por sua alta pe
 
 #### 5.2.8. Ajuste as permissões de arquivos para que o NGINX possa ler
 
-            sudo chown -R ec2-user:nginx /var/www/NOME_DO_SEU_SITE/html
-            
-            sudo chmod -R 750 /var/www/jNOME_DO_SEU_SITE/html
 
-### 5.3. Habilite para o NGINX possa inicializar junto com o sistema
-            
-            sudo systemctl enable nginx.service
-
-### 5.4. Inicie o NGINX
-            
-            sudo systemctl start nginx.service
-
-### 5.5. Coloque este comando no terminal para ver seu ip público
-
-            curl -s ifconfig.me
-
-- Copie e cole este IP no seu navegador, se os passos foram feitos corretamente, o site vai estar em funcionamento.
-
----
-
-## 6. Configurar o WEBHOOK do Telegram para receber alertas quando o site estiver fora do ar
-
-Neste momento nós iremos criar um arquivo com final sh, na qual teremos um código em bash na qual ele irá analizar se o site está em funcionamento. Caso contrário, ele enviará uma mensagem via bot do Telegram informando sobre a queda do servidor.
-
->**Nota:** Antes de iniciar, [entre neste site e veja como criar um bot no Telegram](https://tecnoblog.net/responde/como-criar-um-bot-no-telegram/). Não irei documentar este item.
-
->**Nota2:** Vai ser gerado um TOKEN, guarde ele e não compartilhe com ninguém, é um item de segurança de registro do seu BOT.
-
-### 6.1 Como adquirir seu chat ID
-
->**Nota:** Este irei fazer o passo a passo para registro e futuras orientações.
-
-- Com o TOKEN em mãos, substitua ele no site abaixo.
-
-        https://api.telegram.org/botCOLE_O_TOKEN_AQUI/getUpdates
-
-- Envie uma mensagem de teste da sua conta do Telegram diretamente para o BOT
-
-- Copie e cole a URL acima com o token colado no seu devido lugar
-
-![Telegram-Chat-IP](/imgs/Telegram-CHAT-IP%20.png)
-
-- O Chat ID está na chave "Chat > id"
-
-### 6.2. Código para funcionar o WEBHOOK
-
-O arquivo shell está disponibilizado [aqui](/jgustavo_WEBHOOK_Telegram.sh), mas também terá o código aqui na documentação e explicado.
-
-#### 6.2.1. Criação do arquivo
-
-        sudo vim /usr/local/bin/htmltest.sh
-
-#### 6.2.2. Código para ser colocado no arquivo
-
-        #!/bin/bash
-        
-        #Variaveis criticas do TELEGRAM - Substitua o termo ESCONDIDO pelo CHAT ID e TOKEN do BOT.
-
-        ID_GROUP=ESCONDIDO
-        TOKEN_BOT=ESCONDIDO
-        IP_PUBLICO=$(curl -s ifconfig.me)
-
-        #Criar arquivo de log monitoramento.log
-        touch /var/log/monitoramento.log
-        
-        #Codigo para verificar o funcionamento do site, se o mesmo esta no ar corretamente
-        
-        HTTP_CODE=$(curl -L -s -o /dev/null -w "%{http_code}" $IP_PUBLICO )
-        
-        if [ "$HTTP_CODE" ==  "200" ]; then
-        	MESSAGE_ON="ADMIN: Servidor se encontra ativo"
-            echo "$(date +"%F %T") -  $MESSAGE_ON" >> /var/log/monitoramento.log
-        
-        else
-        	MESSAGE_OFF="ADMIN: O site de encontra fora do ar!"
-            echo "$(date +"%F %T") -  $MESSAGE_OFF" >> /var/log/monitoramento.log
-            curl -s -X POST "https://api.telegram.org/bot$TOKEN_BOT/sendMessage" -d chat_id="$ID_GROUP" -d text="$MESSAGE_OFF"
-            
-        fi
 
 #### 6.2.3. Permissão para funcionar e rodar no sistema
 
