@@ -61,17 +61,18 @@ Ao acessar pela primeira vez após a criação da conta AWS ou após habilitaç�
 
 4. A AWS dá duas opções de VPC: "Somente VPC" ou "VPC e muito mais". Iremos na segunda opção, como a imagem abaixo.
 
-![VPC Novo VPC](../imgs/AWS-EC2-VPC-CREATE-NEW.png)
+![VPC Novo VPC](/imgs/AWS-EC2-VPC-CREATE-NEW.png)
 
-    4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
-        4.1.1 Neste caso, o ip é o 172.32.0.0/16
+   
+4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
+4.1.1 Neste caso, o ip é o 172.32.0.0/16
+
         4.1.2 ![VPC Novo VPC](../imgs/AWS-EC2-VPC-CREATE-NEW2.png)    
     4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
     4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
         4.3.1 Número de sub-redes públicas
         4.3.2 Número de sub-redes Privada
     4.4 Selecionar o
-
 
 
 ## 5. Referências
