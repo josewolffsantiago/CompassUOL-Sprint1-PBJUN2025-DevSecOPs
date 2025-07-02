@@ -46,8 +46,11 @@ Esses conhecimentos irão formar a base para avançar em virtualização e admin
 VPC é a sigla para Virtual Private Cloud e ele é um ambiente de rede isolado dentro da nuvem AWS. A criação de um VPC garante que possamos executar nossos proprios recursos de forma segura e controlada.
 
 O intuito aqui é criar uma VPC seguindo os passos do desafio. A VPC necessita:
+
    #### x. 2 sub-redes pública
+
    #### y. 2 sub-redes privadas
+   
    #### z. Uma Internet Gateway conectada às sub-redes públicas.
 
 Ao acessar pela primeira vez após a criação da conta AWS ou após habilitação do Administrador, siga estes passos:
