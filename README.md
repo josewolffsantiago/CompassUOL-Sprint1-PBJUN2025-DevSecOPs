@@ -1,6 +1,9 @@
 # Sprint 1 - Configurando VPC e Instância AWS  
 **Compass UOL**
 
+> **Nota:**
+> Esta documentação faz parte do programa da Compass UOL e não é considerado um tutorial. Siga cada etapa cuidadosamente e, em caso de dúvidas, consulte a documentação oficial da AWS. 
+
 ## 0. Pré-requisitos
 
 - **Computador com Linux** (qualquer distribuição)  
@@ -20,23 +23,62 @@
          [Site oficial do Fedora](https://fedoraproject.org/)
 
 - **Conhecimento básico do console AWS**
+    - [Crie uma conta gratuitamente](https://aws.amazon.com/pt/training/digital/?p=train&c=tc&z=1)
+    >**Nota:** Mesmo selecionando a conta gratuita, o sistema irá pedir um cartão de crédito para finalizar o cadastro. CUIDADO com os recursos que você irá explorar na AWS.
 - **Vontade de aprender e dedicação**
 
 ---
 
 ## 1. Introdução
- Nesta primeira Sprint fomos introduzidos ao mundo do linux, primordial para o entendimento da virtualização em nuvem. Antes de entrarmos na AWS ou na virtualização de fato, procure entender e compreender a interface de linha de comando (CLI) no LINUX. Independente da distribuição que esteja usando, deixe de lado a interface gráfica e estude os comandos do terminal, na qual fará mais sentido no quesito da virtualização não ter espaço sufiente para que a interface gráfica da distribuição linux da instância que está virtualizada
 
-É importante entender que as distribuições LINUX possuem "bases diferentes", na qual 
+Nesta primeira Sprint fomos introduzidos ao mundo do **Linux**, primordial para o entendimento da virtualização em nuvem. Antes de entrarmos na AWS ou na virtualização de fato, procure entender e compreender a interface de linha de comando (CLI) no LINUX. Independente da distribuição que esteja usando, deixe de lado a interface gráfica e estude os comandos do terminal. Isso é especialmente relevante porque, em ambientes virtualizados, normalmente não há recursos suficientes para rodar interfaces gráficas completas, tornando o domínio do terminal indispensável
+
+É importante entender que as distribuições LINUX possuem "bases diferentes", na qual elas advém. Explicando de forma mais simples, cada distribuição possuem todos um kernel linux, mas com diferenças importantes em gerenciamento de pacotes, estrutura de arquivos e comandos específicos. Por exemplo, comandos que funcionam no Ubuntu (base Debian) podem não funcionar no Fedora (base Red Hat).
+
+Esses conhecimentos irão formar a base para avançar em virtualização e administração de sistemas Linux na nuvem.
+
+>**Nota:** Conforme documentado a frente, o Amazon Linux, distribuição padrão da AWS, possui base Red Hat.
 
 ## 2. Configurando VPC  
+
+# 1. VPC
+VPC é a sigla para Virtual Private Cloud e ele é um ambiente de rede isolado dentro da nuvem AWS. A criação de um VPC garante que possamos executar nossos proprios recursos de forma segura e controlada.
+
+O intuito aqui é criar uma VPC seguindo os passos do desafio. A VPC necessita:
+    x. 2 sub-redes pública
+    y. 2 sub-redes privadas
+    z. Uma Internet Gateway conectada às sub-redes públicas.
+
+Ao acessar pela primeira vez após a criação da conta AWS ou após habilitação do Administrador, siga estes passos:
+
+1. Na aba escrito Search no canto superior esquerto digite "VPC" 
+
+![VPC Aba Search](../imgs/AWS-EC2-Aba-search.png)
+
+2. Clica em "Your VPCs"
+
+3. Ao abrir a página, procure por "Criar VPC"
+
+4. A AWS dá duas opções de VPC: "Somente VPC" ou "VPC e muito mais". Iremos na segunda opção, como a imagem abaixo.
+
+![VPC Novo VPC](../imgs/AWS-EC2-VPC-CREATE-NEW.png)
+
+    4.1 Em Bloco CIDR coloque o IP na qual as instâncias irão ser endereçadas. 
+        4.1.1 Neste caso, o ip é o 172.32.0.0/16
+        4.1.2 ![VPC Novo VPC](../imgs/AWS-EC2-VPC-CREATE-NEW2.png)    
+    4.2 Selecionar a quantidade de 2 em "Número de zonas de disponibilidade (AZs)"
+    4.3 Selecionar a quantidade de 2 sub-redes em ambas as opções abaixo:
+        4.3.1 Número de sub-redes públicas
+        4.3.2 Número de sub-redes Privada
+    4.4 Selecionar o
+
 
 
 ## 5. Referências
 
 Abaixo irei colocar todos os sites na qual retirei recursos e aprendizados para fazer possível este projeto:
 
-[Servidor NGINX básico: ](https://www.dio.me/articles/servidor-web-nginx-basico) Menção honrosa. Funciona bem em distribuições com base Debian
+[Servidor NGINX básico:](https://www.dio.me/articles/servidor-web-nginx-basico) Menção honrosa. Funciona bem em distribuições com base Debian
 
 [Como instalar NGINX no Fedora:](https://www.atlantic.net/dedicated-server-hosting/how-to-install-nginx-web-server-on-fedora/) Interessante seguir esta opção para distribuições com base RED HAT
 
