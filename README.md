@@ -47,6 +47,8 @@
 - **Conhecimento básico do console AWS**
     - [Crie uma conta gratuitamente](https://aws.amazon.com/pt/training/digital/?p=train&c=tc&z=1)
     >**Nota:** Mesmo selecionando a conta gratuita, o sistema irá pedir um cartão de crédito para finalizar o cadastro. CUIDADO com os recursos que você irá explorar na AWS.
+    >**Nota2:** Na verdade, faça o seguinte: Tudo que for criar, exclua no mesmo instante após o aprendizado e os seus testes. Veja se há algum _IP ELÁSTICO_, _GATEWAY_ ou _VPC_ ligado e exclua todos.
+    >**Nota3:** Se estou escrevendo este aviso, é com propriedade que algo aconteceu em minha conta.
 - **Vontade de aprender e dedicação**
 
 ---
